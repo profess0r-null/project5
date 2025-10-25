@@ -35,24 +35,36 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 400%;
+    width: 400%; /* 4 slides (3 + 1 clone) */
     height: 100%;
     display: flex;
     z-index: 1;
-    animation: continuousSlide 30s linear infinite;
+    /* UPDATED ANIMATION */
+    animation: switchSlide 15s ease-in-out infinite; /* 15s = 5s per slide */
 }
 
 .header-background .slide {
-    width: 25%;
+    width: 25%; /* Each slide is 1/4 of the container */
     height: 100%;
     background-size: cover;
     background-position: center;
 }
 
-@keyframes continuousSlide {
+/* UPDATED KEYFRAMES */
+@keyframes switchSlide {
+    /* Slide 1: Hold */
     0%   { transform: translateX(0%); }
+    28%  { transform: translateX(0%); }
+    /* Slide 2: Slide and Hold */
+    33%  { transform: translateX(-25%); }
+    61%  { transform: translateX(-25%); }
+    /* Slide 3: Slide and Hold */
+    66%  { transform: translateX(-50%); }
+    94%  { transform: translateX(-50%); }
+    /* Slide to Clone (instant jump to 0% happens here) */
     100% { transform: translateX(-75%); }
 }
+
 
 .header-overlay {
     position: absolute;
@@ -227,11 +239,6 @@ body {
     border-top: 1px solid var(--secondary-dark);
 }
 
-/* =================================== */
-/* ====   Responsive Design   ==== */
-/* =================================== */
-
-/* For Tablets (e.g., iPads) */
 @media (max-width: 992px) {
     .row {
         flex-direction: column;
@@ -242,7 +249,6 @@ body {
     }
 }
 
-/* For Large Phones */
 @media (max-width: 768px) {
     .container { padding: 0 15px; }
     .header h1 { font-size: 2.2rem; }
@@ -261,7 +267,6 @@ body {
     }
 }
 
-/* For Small Phones */
 @media (max-width: 480px) {
     .header h1 { font-size: 1.8rem; }
     .subtitle { font-size: 1rem; }
