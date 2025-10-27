@@ -276,3 +276,114 @@ body {
     .person-name { font-size: 1.1rem; }
     .social-icons .icon { width: 40px; height: 40px; font-size: 1.2rem; }
 }
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: rgba(26, 32, 44, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-brand:hover {
+    color: var(--accent-blue);
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; 
+}
+
+.nav-menu li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease-out;
+}
+
+.nav-menu li a:hover {
+    color: #ffffff; 
+}
+
+.nav-menu li a:hover::after {
+    width: 100%; 
+}
+
+
+.page-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.page-container h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--accent-blue);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.page-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.page-container a {
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-container a:hover {
+    color: var(--primary-dark);
+}
+
+.page-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+.page-container li {
+    font-size: 1.1rem;
+    padding: 5px 0;
+}
