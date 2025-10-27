@@ -35,22 +35,20 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 400%; /* 4 slides (3 + 1 clone) */
+    width: 400%;
     height: 100%;
     display: flex;
     z-index: 1;
-    /* UPDATED ANIMATION */
-    animation: switchSlide 15s ease-in-out infinite; /* 15s = 5s per slide */
+    animation: switchSlide 15s ease-in-out infinite; 
 }
 
 .header-background .slide {
-    width: 25%; /* Each slide is 1/4 of the container */
+    width: 25%; 
     height: 100%;
     background-size: cover;
     background-position: center;
 }
 
-/* UPDATED KEYFRAMES */
 @keyframes switchSlide {
     /* Slide 1: Hold */
     0%   { transform: translateX(0%); }
@@ -79,6 +77,24 @@ body {
 .header-content {
     position: relative;
     z-index: 3;
+}
+.heading-with-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .header h1 {
@@ -275,6 +291,15 @@ body {
     .card-content img { width: 100px; height: 100px; margin-top: -65px; }
     .person-name { font-size: 1.1rem; }
     .social-icons .icon { width: 40px; height: 40px; font-size: 1.2rem; }
+    .header-logo {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+        padding: 3px;
+    }
+    .heading-with-logo {
+        gap: 15px;
+    }
 }
 .navbar {
     position: sticky;
