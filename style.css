@@ -31,8 +31,9 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 5px 0;
+    padding: 10px 0;
 }
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -45,7 +46,7 @@ body {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
-    min-height: 29px; /* Added height to prevent layout shift */
+    min-height: 29px;
 }
 .nav-brand:hover {
     color: var(--accent-blue);
@@ -510,12 +511,11 @@ body {
         justify-content: center;
     }
     .nav-container {
-        flex-direction: column;
-        gap: 10px;
+        justify-content: center; /* Center the menu on mobile */
     }
     .nav-menu {
         justify-content: center;
-        width: 100%;
+        width: auto; /* Allow menu to take natural width */
     }
     .page-container {
         padding: 30px 20px;
@@ -558,5 +558,12 @@ body {
     }
     .page-container p, .page-container li {
         font-size: 1rem;
+    }
+    .nav-menu {
+        gap: 15px; /* Reduce gap between nav items on small screens */
+    }
+    .nav-menu li a {
+        padding: 8px 0; /* Adjust padding if needed */
+        font-size: 0.9rem; /* Slightly smaller font for mobile nav */
     }
 }
